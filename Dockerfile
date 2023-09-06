@@ -4,12 +4,15 @@ WORKDIR /usr/src/app
 
 COPY ./src ./src
 
-RUN yarn install --ignore-engines
+COPY ./package.json ./package.json
+COPY ./tsconfig.json ./tsconfig.json
 
-RUN yarn install
+### set env variable - can also be provided from docker compose
 
-RUN yarn build
+RUN npm install
+
+RUN npm run build
 
 EXPOSE 3007
 
-CMD yarn start
+CMD npm start

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "start": "node dist/server.js",
+    "start": "node dist/app.js",
     "dev": "nodemon -L -e ts --exec \"yarn run build && yarn start\"",
     "build": "tsc"
   },
