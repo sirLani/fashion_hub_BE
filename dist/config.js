@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const config = {
     db: {
-        port: 5431,
+        port: Number(process.env.DB_PORT) || 5432,
     },
 };
 exports.default = config;
