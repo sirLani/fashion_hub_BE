@@ -1,11 +1,11 @@
 import { Client } from "pg";
 
-async function createDbConnection(port = 5431) {
+async function createDbConnection(port = 5432) {
   const client = new Client({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
+    user: "postgres",
+    host: "db",
+    database: "fashion_hub",
+    password: "uniquepassword",
     port: port,
   });
 
@@ -20,7 +20,7 @@ async function createDbConnection(port = 5431) {
   return client;
 }
 
-export async function createWrappedDbClient(port = 5431) {
+export async function createWrappedDbClient(port = 5432) {
   const client = await createDbConnection(port);
   return {
     client,
