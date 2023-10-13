@@ -72,7 +72,7 @@ async function createServer(config: ServerConfig): Promise<ApplicationServer> {
             await query(`INSERT INTO users (email, first_name, last_name, gender, id, password)
           VALUES (${userData.email}, ${userData.first_name}, ${userData.last_name}, ${userData.gender}, ${userData.id}, ${userData.password})`);
           return res.json({
-            ok: true,
+            ok: "successful",
           });
         }
       } catch (error) {
